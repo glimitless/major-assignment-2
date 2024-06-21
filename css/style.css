@@ -1,0 +1,1141 @@
+/* Removes all default margins and padding. Sets the sizing of divs to include the padding and the border */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sets root font-size to 16px */
+html{
+    font-size: 12pt;
+}
+
+/* Styles default body type. Sets default background colour */
+body{
+    font-size: 1.25rem;
+    color: #dde2e3;
+    background-color: #2a3439;
+}
+
+/* Default styling for type */
+h1{
+    font-size: 1.5em;
+    font-family: "oswald", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5em;
+}
+p{
+    font-family: "source-sans-pro", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* Styles container for Gian-I Media Logo*/
+.gim-logo{
+    display: flex;
+    align-items: center;
+}
+
+/* Individual styles for type of Gian-I Media Logo */
+.logo-text{
+    font-size: 1.5rem;
+    line-height: 1.25em;
+    color: #798d93;
+}
+
+/* Styles to keep website content in the center of the viewport */
+.background-container{
+    width: 100%;
+    min-height: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Responsive styles for phone resolutions */
+@media (max-width: 600px){
+
+    /* General changes to type to accomodate for phone resolutions */
+    p{
+        font-size: 1.15rem;
+    }
+
+    /* Container that holds bar graph svg */
+    .visualization-container{
+        width: 100%;
+        height: auto;
+        overflow: auto;
+    }
+
+    /* Container that holds website content */ 
+    .content-container{
+        width: 37.5rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        height: 100%;
+        display: grid;
+        background-color: #2a3439;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(30, 3rem);
+    }
+
+    /* Styles placement for body text */ 
+    .main-text-stream{
+        grid-row: 2 / 6;
+        grid-column: 1 / 7;
+    }
+
+    /* Navigation Menu Styles */
+
+    /* Styles the space for the navigation menu */
+    .navigation{
+        width: 100%;
+        height: 6rem;
+        background-color: #2a3439;
+        display: flex;
+        position: relative;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        justify-content: space-between;
+        z-index: 9;
+    }
+
+    /* Container that holds the content of the navigation menu */
+    .nav-content{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* Container that holds the links of the navigation menu */
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        background-color: rgba(47, 55, 58, 0.8);
+        transition: width 0.5s ease, height 0.5s ease, border-radius 0.5s ease;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    /* Styles for the links of the navigation menu */
+    .menu-item{
+        display: none;
+        text-decoration: none;
+        font-size: 1.5em;
+        font-family: "oswald", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 2em;
+        color: #798d93;
+    }
+
+    /* Styles the space for the hamburger menu icon */
+    .menu-icon {
+        width: 2.25rem;
+        height: 100%;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 11;
+    }
+
+    /* Styles the hamburger menu icon */
+    .menu-line, .menu-line::before, .menu-line::after {
+        background-color: #798d93;
+        height: 0.5rem;
+        width: 100%;
+        position: absolute;
+        transition: all 0.3s ease;
+    } 
+    .menu-line::before, .menu-line::after {
+        content: '';
+        display: block;
+    }
+    .menu-line::before {
+        top: 0; 
+        transform: translateY(0.8rem); 
+    }
+    .menu-line::after {
+        bottom: 0; 
+        transform: translateY(-0.8rem); 
+    }
+    .menu-icon.active .menu-line {
+        background-color: transparent;
+    }
+    .menu-icon.active .menu-line::before {
+        transform: translateY(0) rotate(45deg);
+    }
+    .menu-icon.active .menu-line::after {
+        transform: translateY(0) rotate(-45deg);
+    }
+
+    /* Styles the size of the bar graph graphic */
+    .bar-graph-1{
+        margin-bottom: 1.25em;
+        width: 800px;
+        height: 500px;
+    }
+
+
+
+    /* Styles for raw data table */
+
+    /* Container for the raw data table */    
+    .raw-data-stream{
+        grid-column: 1 / 7;
+        grid-row: 7 / 50;
+        overflow: auto;
+    }
+
+    /* Container for the filter of the raw data table */
+    .filter-raw-data-container{
+        grid-row: 3 / 6;
+        grid-column: 1 / 4;
+    }
+
+    /* Styles user interaction fields for  */
+    .form-filter-raw-data > input{
+        margin-top: 0.2rem;
+        height: 2rem;
+        width: 12rem;
+        padding: 0.5rem;
+    }
+    .form-filter-raw-data > select{
+        margin-top: 0.2rem;
+        height: 2rem;
+        width: 12rem;
+        padding: 0.5rem;
+    }
+    
+    /* Sets font family for raw data table */
+    .raw-data-table{
+        font-family: "source-sans-pro", sans-serif;
+    }
+
+    /* Keeps all raw data table content on a single line */
+    .raw-data-table-head-item, .raw-data-table-body-item {
+        white-space: nowrap; 
+    }
+
+    /* Adds padding to raw data table items */
+    .raw-data-table-head-item{
+        padding: 1rem;
+    }
+    .raw-data-table-body-item{
+        padding: 1rem;
+    }
+
+    /* Styles for submit your MBTI form */
+
+    /* Styles for positioning and setup of submit your MBTI form */
+    .form-MBTI{
+        font-family: "source-sans-pro", sans-serif;
+        grid-column: 1 / 7;
+        grid-row: 4 / 16;
+        border: #798d93 solid 2px;
+        border-radius: 10px;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(10, 4.875rem);
+    }
+
+    /* Sets all form elements to be centered within their respective divs  */
+    .form-MBTI > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Styles user interaction fields for MBTI form */
+    .form-MBTI > div > input{
+        margin-top: 0.2rem;
+        height: 2rem;
+        width: 12rem;
+        padding: 0.5rem;
+    }
+    .form-MBTI > div > select{
+        margin-top: 0.2rem;
+        height: 2rem;
+        width: 12rem;
+        padding: 0.5rem;
+    }
+
+    /* Container for form name field */
+    .form-MBTI-container-name{
+        grid-column: 1 / 7;
+        grid-row: 2 / 3;
+    }
+    
+    /* Container for form program field */
+    .form-MBTI-container-program{
+        grid-column: 1 / 7;
+        grid-row: 3 / 4;
+    }
+
+    /* Container for form mbti field */
+    .form-MBTI-container-mbti{
+        grid-column: 1 / 7;
+        grid-row: 4 / 5;
+    }
+    
+    /* Container for form assertiveTurbulent field */
+    .form-MBTI-container-assertiveTurbulent{
+        grid-column: 1 / 7;
+        grid-row: 5 / 6;
+    }
+
+    /* Container for form submit field */
+    .form-MBTI-container-submit{
+        grid-column: 1 / 7;
+        grid-row: 6 / 8;
+    }
+
+
+
+    /* Styles for information on MBTIs page */
+
+    /* Container for all MBTI information containers */
+    .information-MBTI-container{
+        width: 100%;
+        grid-column: 1 / 13;
+        grid-row: 3 / 20;   
+        display: flex;
+        flex-direction: column;
+        
+    }
+    
+    /* Styles default display of MBTI information description container */
+    .information-MBTI-description{
+        display: none;
+        height: 0;
+    }
+
+    /* Styles for rows of MBTI information divs */
+    .information-MBTI-row{
+        display: grid;
+        grid-template-rows: repeat(12, 4.875rem);
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+    /* General styles for each MBTI information div */
+    .information-MBTI-row > div{
+        cursor: pointer;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    
+    /* Highlights MBTI information div as cursor hovers over it */
+    /* .information-MBTI-row > div:hover{
+        background-color: darkblue;
+    } */
+
+    /*  */
+    .information-MBTI-description-row{
+        width: 100%;
+        height: 0;
+        
+    }
+    .active-information-MBTI-description-row{
+        padding: 0.5rem;
+        width: 100%;
+        min-height: 14.625rem;
+        background-color: #202628;
+    }
+    .active{
+        background-color: #202628;
+    }
+
+    .information-MBTI-container-INTJ{
+        grid-column: 1 / 4;
+        grid-row: 1 / 4;
+    }
+    .information-MBTI-container-INTP{
+        grid-column: 1 / 4;
+        grid-row: 4 / 7;
+    }
+    .information-MBTI-container-ENTJ{
+        grid-column: 1 / 4;
+        grid-row: 7 / 10;
+    }
+    .information-MBTI-container-ENTP{
+        grid-column: 1 / 4;
+        grid-row: 10 / 13;
+
+    }
+    .information-MBTI-container-INFJ{
+        grid-column: 1 / 4;
+        grid-row: 1 / 4;
+
+    }
+    .information-MBTI-container-INFP{
+        grid-column: 1 / 4;
+        grid-row: 4 / 7;
+ 
+    }
+    .information-MBTI-container-ENFJ{
+        grid-column: 1 / 4;
+        grid-row: 7 / 10;
+
+    }
+    .information-MBTI-container-ENFP{
+        grid-column: 1 / 4;
+        grid-row: 10 / 13;
+
+    }
+    .information-MBTI-container-ISTJ{
+        grid-column: 1 / 4;
+        grid-row: 1 / 4;
+
+    }
+    .information-MBTI-container-ISFJ{
+        grid-column: 1 / 4;
+        grid-row: 4 / 7;
+
+    }
+    .information-MBTI-container-ESTJ{
+        grid-column: 1 / 4;
+        grid-row: 7 / 10;
+  
+    }
+    .information-MBTI-container-ESFJ{
+        grid-column: 1 / 4;
+        grid-row: 10 / 13;
+ 
+    }
+    .information-MBTI-container-ISTP{
+        grid-column: 1 / 4;
+        grid-row: 1 / 4;
+  
+    }
+    .information-MBTI-container-ISFP{
+        grid-column: 1 / 4;
+        grid-row: 4 / 7;
+
+    }
+    .information-MBTI-container-ESTP{
+        grid-column: 1 / 4;
+        grid-row: 7 / 10;
+   
+    }
+    .information-MBTI-container-ESFP{
+        grid-column: 1 / 4;
+        grid-row: 10 / 13;
+
+    }
+
+
+    
+}
+
+@media (min-width: 601px) and (max-width: 1020px){
+
+    p{
+        font-size: 1.15rem;
+    }
+    
+    .content-container{
+        width: 37.5rem;
+        padding-left: 2.25rem;
+        padding-right: 2.25rem;
+        height: 100%;
+        display: grid;
+        background-color: #2a3439;
+        grid-template-columns: repeat(12, 2.75rem);
+        grid-template-rows: repeat(30, 3rem);
+    }
+
+
+    .main-text-stream{
+        grid-row: 2 / 20;
+        grid-column: 1 / 11;
+    }
+    .bar-graph-1{
+        margin-bottom: 1.25em;
+        width: 800px;
+        height: 500px;
+        width: 100%;
+        overflow: auto;
+    }
+
+
+    /* ☰ */
+    .navigation{
+        width: 100%;
+        height: 6rem;
+        background-color: #2a3439;
+        display: flex;
+        justify-content: center;
+    }
+    .nav-content{
+        width: 33rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-radius: 0% 0% 0% 50% / 0% 0% 0% 50%;
+        background-color: rgba(47, 55, 58, 0.8);
+        transition: width 0.5s ease, height 0.5s ease, border-radius 0.5s ease;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    /* Raw Data Table */
+    .filter-raw-data-container{
+        grid-row: 3 / 6;
+        grid-column: 1 / 10;
+    }
+    .raw-data-stream{
+        grid-column: 1 / 12;
+        grid-row: 5 / 50;
+        overflow: auto;
+    }
+    .form-filter-raw-data > input{
+        margin-top: 0.2rem;
+        height: 2rem;
+        width: 12rem;
+        padding: 0.5rem;
+    }
+    .form-filter-raw-data > select{
+        margin-top: 0.2rem;
+        height: 2rem;
+        width: 12rem;
+        padding: 0.5rem;
+    }
+    
+    
+    .raw-data-table{
+        font-family: "source-sans-pro", sans-serif;
+    }
+    
+    .raw-data-table-head-item, .raw-data-table-body-item {
+        /* Keeps the content on a single line */
+        white-space: nowrap; 
+    }
+
+    .raw-data-table-head-item{
+        padding: 1rem;
+    }
+
+    .raw-data-table-body-item{
+        padding: 1rem;
+    }
+    
+
+
+
+
+    .menu-icon {
+        width: 2.25rem;
+        height: 100%;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 11;
+    }
+    .menu-item{
+        display: none;
+        text-decoration: none;
+        font-size: 1.5em;
+        font-family: "oswald", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 2em;
+        color: #798d93;
+    }
+
+
+    .menu-line, .menu-line::before, .menu-line::after {
+        background-color: #798d93; /* Ensure the color is visible against your background */
+        height: 0.5rem;
+        width: 100%;
+        position: absolute;
+        transition: all 0.3s ease;
+    }
+    
+    .menu-line::before, .menu-line::after {
+        content: '';
+        display: block;
+    }
+    
+    .menu-line::before {
+        top: 0; /* Align to the top of the parent */
+        transform: translateY(0.8rem); /* Adjust this value if needed */
+    }
+    
+    .menu-line::after {
+        bottom: 0; /* Align to the bottom of the parent */
+        transform: translateY(-0.8rem); /* Adjust this value if needed */
+    }
+    
+    .menu-icon.active .menu-line {
+        background-color: transparent;
+    }
+    
+    .menu-icon.active .menu-line::before {
+        transform: translateY(0) rotate(45deg);
+    }
+    
+    .menu-icon.active .menu-line::after {
+        transform: translateY(0) rotate(-45deg);
+    }
+
+
+    .form-MBTI{
+        font-family: "source-sans-pro", sans-serif;
+        grid-column: 1 / 13;
+        grid-row: 4 / 14;
+        border: #798d93 solid 2px;
+        border-radius: 10px;
+        display: grid;
+        grid-template-columns: repeat(6, 5.5rem);
+        grid-template-rows: repeat(7, 4.875rem);
+    }
+
+    .form-MBTI > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .form-MBTI > div > input{
+        margin-top: 0.2rem;
+        height: 2rem;
+        width: 12rem;
+        padding: 0.5rem;
+    }
+    .form-MBTI > div > select{
+        margin-top: 0.2rem;
+        height: 2rem;
+        width: 12rem;
+        padding: 0.5rem;
+    }
+
+    
+    .form-MBTI-container-name{
+        grid-column: 1 / 4;
+        grid-row: 1 / 3;
+    }
+    
+    .form-MBTI-container-mbti{
+        grid-column: 1 / 4;
+        grid-row: 3 / 5;
+    }
+    
+    .form-MBTI-container-program{
+        grid-column: 4 / 7;
+        grid-row: 1 / 3;
+    }
+    .form-MBTI-container-assertiveTurbulent{
+        grid-column: 4 / 7;
+        grid-row: 3 / 5;
+    }
+
+    .form-MBTI-container-submit{
+        grid-column: 1 / 7;
+        grid-row: 5 / 7;
+    }
+
+
+
+    .information-MBTI-container{
+        width: 100%;
+        grid-column: 1 / 13;
+        grid-row: 3 / 20;   
+        display: flex;
+        flex-direction: column;
+        
+    }
+    
+    .information-MBTI-description{
+        display: none;
+    }
+
+
+    .information-MBTI-row{
+        display: grid;
+        grid-template-rows: repeat(6, 4.875rem);
+        grid-template-columns: repeat(6, 5.5rem);
+
+    }
+    .information-MBTI-row > div{
+        cursor: pointer;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    
+    
+    /* .information-MBTI-row > div:hover{
+        background-color: darkblue;
+    } */
+
+
+    .information-MBTI-description-row{
+        width: 100%;
+        height: 0;
+        
+    }
+    .active-information-MBTI-description-row{
+        padding: 0.5rem;
+        width: 100%;
+        height: 14.625rem;
+        background-color: #202628;
+    }
+    .active{
+        background-color: #202628;
+    }
+
+    .information-MBTI-container-INTJ{
+        grid-column: 1 / 4;
+        grid-row: 1 / 4;
+    }
+    .information-MBTI-container-INTP{
+        grid-column: 4 / 7;
+        grid-row: 1 / 4;
+    }
+    .information-MBTI-container-ENTJ{
+        grid-column: 1 / 4;
+        grid-row: 4 / 7;
+    }
+    .information-MBTI-container-ENTP{
+        grid-column: 4 / 7;
+        grid-row: 4 / 7;
+
+    }
+    .information-MBTI-container-INFJ{
+        grid-column: 1 / 4;
+        grid-row: 1 / 4;
+
+    }
+    .information-MBTI-container-INFP{
+        grid-column: 4 / 7;
+        grid-row: 1 / 4;
+ 
+    }
+    .information-MBTI-container-ENFJ{
+        grid-column: 1 / 4;
+        grid-row: 4 / 7;
+
+    }
+    .information-MBTI-container-ENFP{
+        grid-column: 4 / 7;
+        grid-row: 4 / 7;
+
+    }
+    .information-MBTI-container-ISTJ{
+        grid-column: 1 / 4;
+        grid-row: 1 / 4;
+
+    }
+    .information-MBTI-container-ISFJ{
+        grid-column: 4 / 7;
+        grid-row: 1 / 4;
+
+    }
+    .information-MBTI-container-ESTJ{
+        grid-column: 1 / 4;
+        grid-row: 4 / 7;
+  
+    }
+    .information-MBTI-container-ESFJ{
+        grid-column: 4 / 7;
+        grid-row: 4 / 7;
+ 
+    }
+    .information-MBTI-container-ISTP{
+        grid-column: 1 / 4;
+        grid-row: 1 / 4;
+  
+    }
+    .information-MBTI-container-ISFP{
+        grid-column: 4 / 7;
+        grid-row: 1 / 4;
+
+    }
+    .information-MBTI-container-ESTP{
+        grid-column: 1 / 4;
+        grid-row: 4 / 7;
+   
+    }
+    .information-MBTI-container-ESFP{
+        grid-column: 4 / 7;
+        grid-row: 4 / 7;
+
+    }
+
+    
+}
+
+@media (min-width: 1021px){
+
+
+
+    .nav-content{
+        width: 62.5rem;
+    }
+    .navigation{
+        width: 100%;
+        height: 6rem;
+        background-color: #2a3439;
+        display: fixed;
+    }
+    .content-container{
+        width: 62.5rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        height: 100%;
+        display: grid;
+        background-color: #2a3439;
+        grid-template-columns: repeat(12, 4.875rem);
+        grid-template-rows: repeat(50, 4.875rem);
+    }
+
+    .menu-icon{
+        display: none;
+    }
+    .menu-item-container{
+        display: flex;
+        
+        align-items: center;
+    }
+    .menu-item{
+        display: block;
+    }
+    .navigation{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .nav-content{
+        max-width: 62.5rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    .nav-overlay{
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 2.5rem;
+    }
+    .menu-item{
+        font-family: "oswald", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 2em;
+        color: #798d93;
+    }
+    
+    .bar-graph-1{
+        margin-bottom: 1.25em;
+        width: 800px;
+        height: 500px;
+    }
+    .main-text-stream{
+        grid-column:1 / 7;
+        grid-row: 2 / 50;
+    }
+    
+
+
+    /* Raw Data Table */
+    .filter-raw-data-container{
+        grid-row: 3 / 6;
+        grid-column: 1 / 10;
+    }
+    
+    .raw-data-stream{
+        grid-column: 1 / 12;
+        grid-row: 4 / 50;
+    }
+    .raw-data-table{
+        font-family: "source-sans-pro", sans-serif;
+    }
+    
+    .raw-data-table-head-item, .raw-data-table-body-item {
+        /* Keeps the content on a single line */
+        white-space: nowrap; 
+    }
+
+    .raw-data-table-head-item{
+        padding: 1rem;
+    }
+
+    .raw-data-table-body-item{
+        padding: 1rem;
+    }
+    .form-filter-raw-data > input{
+        margin-top: 0.2rem;
+        height: 2rem;
+        width: 12rem;
+        padding: 0.5rem;
+    }
+    .form-filter-raw-data > select{
+        margin-top: 0.2rem;
+        height: 2rem;
+        width: 12rem;
+        padding: 0.5rem;
+    }
+    
+
+
+    .form-MBTI{
+        font-family: "source-sans-pro", sans-serif;
+        grid-column: 1 / 9;
+        grid-row: 3 / 9;
+        border: #798d93 solid 2px;
+        border-radius: 10px;
+        display: grid;
+        grid-template-columns: repeat(8, 4.875rem);
+        grid-template-rows: repeat(7, 4.875rem);
+    }
+
+    .form-MBTI > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .form-MBTI > div > input{
+        margin-top: 0.2rem;
+        height: 2rem;
+        width: 12rem;
+        padding: 0.5rem;
+    }
+    .form-MBTI > div > select{
+        margin-top: 0.2rem;
+        height: 2rem;
+        width: 12rem;
+        padding: 0.5rem;
+    }
+
+    
+    .form-MBTI-container-name{
+        grid-column: 1 / 5;
+        grid-row: 1 / 3;
+    }
+    
+    .form-MBTI-container-mbti{
+        grid-column: 1 / 5;
+        grid-row: 3 / 5;
+    }
+    
+    .form-MBTI-container-program{
+        grid-column: 5 / 9;
+        grid-row: 1 / 3;
+    }
+    .form-MBTI-container-assertiveTurbulent{
+        grid-column: 5 / 9;
+        grid-row: 3 / 5;
+    }
+
+    .form-MBTI-container-submit{
+        grid-column: 1 / 9;
+        grid-row: 5 / 7;
+    }
+    
+
+    
+
+
+
+
+
+
+    .information-MBTI-container{
+        width: 100%;
+        grid-column: 1 / 13;
+        grid-row: 3 / 20;   
+        display: flex;
+        flex-direction: column;
+        
+    }
+    
+    .information-MBTI-description{
+        display: none;
+    }
+
+
+    .information-MBTI-row{
+        display: grid;
+        grid-template-rows: repeat(3, 4.875rem);
+        grid-template-columns: repeat(12, 4.875rem);
+        
+
+    }
+    .information-MBTI-row > div{
+        cursor: pointer;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    
+    
+
+    .information-MBTI-row > div:hover{
+        background-color: darkblue;
+    }
+
+
+    .information-MBTI-description-row{
+        transition: all 0.5s ease-out;
+        width: 100%;
+        max-height: 0;
+        color:rgba(221, 226, 227, 0);
+    }
+    .active-information-MBTI-description-row{
+        display: flex;
+        gap: 1.25rem;
+        padding: 0.5rem;
+        width: 100%;
+        max-height: 14.625rem;
+        color:rgba(221, 226, 227, 1);
+        background-color: #202628;
+    }
+    .active{
+        background-color: #202628;
+    }
+
+    .information-MBTI-container-INTJ{
+        grid-column: 1 / 4;
+        grid-row: 1 / 4;
+    }
+
+    .information-MBTI-container-INTP{
+        grid-column: 4 / 7;
+        grid-row: 1 / 4;
+    }
+    .information-MBTI-container-ENTJ{
+        grid-column: 7 / 10;
+        grid-row: 1 / 4;
+    }
+    .information-MBTI-container-ENTP{
+        grid-column: 10 / 13;
+        grid-row: 1 / 4;
+
+    }
+    .information-MBTI-container-INFJ{
+        grid-column: 1 / 4;
+        grid-row: 1 / 4;
+
+    }
+    .information-MBTI-container-INFP{
+        grid-column: 4 / 7;
+        grid-row: 1 / 4;
+ 
+    }
+    .information-MBTI-container-ENFJ{
+        grid-column: 7 / 10;
+        grid-row: 1 / 4;
+
+    }
+    .information-MBTI-container-ENFP{
+        grid-column: 10 / 13;
+        grid-row: 1 / 4;
+
+    }
+    .information-MBTI-container-ISTJ{
+        grid-column: 1 / 4;
+        grid-row: 1 / 4;
+
+    }
+    .information-MBTI-container-ISFJ{
+        grid-column: 4 / 7;
+        grid-row: 1 / 4;
+
+    }
+    .information-MBTI-container-ESTJ{
+        grid-column: 7 / 10;
+        grid-row: 1 / 4;
+  
+    }
+    .information-MBTI-container-ESFJ{
+        grid-column: 10 / 13;
+        grid-row: 1 / 4;
+ 
+    }
+    .information-MBTI-container-ISTP{
+        grid-column: 1 / 4;
+        grid-row: 1 / 4;
+  
+    }
+    .information-MBTI-container-ISFP{
+        grid-column: 4 / 7;
+        grid-row: 1 / 4;
+
+    }
+    .information-MBTI-container-ESTP{
+        grid-column: 7 / 10;
+        grid-row: 1 / 4;
+   
+    }
+    .information-MBTI-container-ESFP{
+        grid-column: 10 / 14;
+        grid-row: 1 / 4;
+
+    }
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+/*
+ 
+(First condition max-width up to 400, the rest can be min-width
+
+400 older devices
+600 newer phone phone
+768 older/ tablets 
+1000 older laptops
+1440 newer laptops
+1800 projectors
+
+*/

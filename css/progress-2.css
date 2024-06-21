@@ -1,0 +1,532 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 12pt;
+}
+body{
+    font-size: 1.25rem;
+    color: #dde2e3;
+    background-color: #2a3439;
+}
+
+h1{
+    font-size: 1.5em;
+    font-family: "oswald", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5em;
+}
+p{
+    font-family: "source-sans-pro", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+.gim-logo{
+    display: flex;
+    align-items: center;
+}
+.logo-text{
+    font-size: 1.5rem;
+    line-height: 1.25em;
+    color: #798d93;
+}
+.background-container{
+    width: 100%;
+    min-height: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+@media (max-width: 600px){
+
+    p{
+        font-size: 1.15rem;
+    }
+
+    
+    .visualization-container{
+        width: 100%;
+        height: auto;
+        overflow: auto;
+    }
+
+    .content-container{
+        width: 37.5rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        height: 100%;
+        display: grid;
+        background-color: #2a3439;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(30, 3rem);
+    }
+
+    .main-text-stream{
+        grid-row: 2 / 6;
+        grid-column: 1 / 7;
+    }
+
+
+    /* ☰ */
+    .navigation{
+        width: 100%;
+        height: 6rem;
+        background-color: #2a3439;
+        display: flex;
+        position: relative;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        justify-content: space-between;
+        z-index: 9;
+        /* border-bottom: 0.001rem solid #dde2e3; */
+    }
+    .nav-content{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        background-color: rgba(47, 55, 58, 0.8);
+        transition: width 0.5s ease, height 0.5s ease, border-radius 0.5s ease;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .menu-item{
+        display: none;
+        text-decoration: none;
+        font-size: 1.5em;
+        font-family: "oswald", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 2em;
+        color: #798d93;
+    }
+    .menu-icon {
+        width: 2.25rem;
+        height: 100%;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 11;
+    }
+    .menu-line, .menu-line::before, .menu-line::after {
+        background-color: #798d93; /* Ensure the color is visible against your background */
+        height: 0.5rem;
+        width: 100%;
+        position: absolute;
+        transition: all 0.3s ease;
+    }
+    
+    .menu-line::before, .menu-line::after {
+        content: '';
+        display: block;
+    }
+    
+    .menu-line::before {
+        top: 0; /* Align to the top of the parent */
+        transform: translateY(0.8rem); /* Adjust this value if needed */
+    }
+    
+    .menu-line::after {
+        bottom: 0; /* Align to the bottom of the parent */
+        transform: translateY(-0.8rem); /* Adjust this value if needed */
+    }
+    
+    .menu-icon.active .menu-line {
+        background-color: transparent;
+    }
+    
+    .menu-icon.active .menu-line::before {
+        transform: translateY(0) rotate(45deg);
+    }
+    
+    .menu-icon.active .menu-line::after {
+        transform: translateY(0) rotate(-45deg);
+    }
+
+    .bar-graph-1{
+        margin-bottom: 1.25em;
+        width: 800px;
+        height: 500px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1020px){
+    
+    .content-container{
+        width: 37.5rem;
+        padding-left: 2.25rem;
+        padding-right: 2.25rem;
+        height: 100%;
+        display: grid;
+        background-color: #2a3439;
+        grid-template-columns: repeat(12, 2.75rem);
+        grid-template-rows: repeat(30, 3rem);
+    }
+
+
+    .main-text-stream{
+        grid-row: 2 / 20;
+        grid-column: 2 / 12;
+    }
+    .bar-graph-1{
+        margin-bottom: 1.25em;
+        width: 800px;
+        height: 500px;
+        width: 100%;
+        overflow: auto;
+    }
+
+
+    /* ☰ */
+    .navigation{
+        width: 100%;
+        height: 6rem;
+        background-color: #2a3439;
+        display: flex;
+        justify-content: center;
+    }
+    .nav-content{
+        width: 27.5rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-radius: 0% 0% 0% 50% / 0% 0% 0% 50%;
+        background-color: rgba(47, 55, 58, 0.8);
+        transition: width 0.5s ease, height 0.5s ease, border-radius 0.5s ease;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+
+
+
+
+    .menu-icon {
+        width: 2.25rem;
+        height: 100%;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 11;
+    }
+    .menu-item{
+        display: none;
+        text-decoration: none;
+        font-size: 1.5em;
+        font-family: "oswald", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 2em;
+        color: #798d93;
+    }
+
+
+    .menu-line, .menu-line::before, .menu-line::after {
+        background-color: #798d93; /* Ensure the color is visible against your background */
+        height: 0.5rem;
+        width: 100%;
+        position: absolute;
+        transition: all 0.3s ease;
+    }
+    
+    .menu-line::before, .menu-line::after {
+        content: '';
+        display: block;
+    }
+    
+    .menu-line::before {
+        top: 0; /* Align to the top of the parent */
+        transform: translateY(0.8rem); /* Adjust this value if needed */
+    }
+    
+    .menu-line::after {
+        bottom: 0; /* Align to the bottom of the parent */
+        transform: translateY(-0.8rem); /* Adjust this value if needed */
+    }
+    
+    .menu-icon.active .menu-line {
+        background-color: transparent;
+    }
+    
+    .menu-icon.active .menu-line::before {
+        transform: translateY(0) rotate(45deg);
+    }
+    
+    .menu-icon.active .menu-line::after {
+        transform: translateY(0) rotate(-45deg);
+    }
+
+    
+}
+
+@media (min-width: 1021px){
+
+
+
+    .nav-content{
+        width: 62.5rem;
+    }
+    .navigation{
+        width: 100%;
+        height: 6rem;
+        background-color: #2a3439;
+        display: fixed;
+    }
+    .content-container{
+        width: 62.5rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        height: 100%;
+        display: grid;
+        background-color: #2a3439;
+        grid-template-columns: repeat(12, 4.875rem);
+        grid-template-rows: repeat(50, 4.875rem);
+    }
+
+    .menu-icon{
+        display: none;
+    }
+    .menu-item-container{
+        display: flex;
+        
+        align-items: center;
+    }
+    .menu-item{
+        display: block;
+    }
+    .navigation{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .nav-content{
+        max-width: 62.5rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    .nav-overlay{
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 2.5rem;
+    }
+    .menu-item{
+        font-family: "oswald", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 2em;
+        color: #798d93;
+    }
+    
+    .bar-graph-1{
+        margin-bottom: 1.25em;
+        width: 800px;
+        height: 500px;
+    }
+    .main-text-stream{
+        grid-column:1 / 7;
+        grid-row: 2 / 50;
+    }
+    .raw-data-text-stream{
+        grid-column: 1 / 12;
+        grid-row: 2 / 50;
+    }
+
+
+    /* Raw Data Table */
+    .raw-data-table{
+        font-family: "source-sans-pro", sans-serif;
+    }
+    
+    .raw-data-table-head-item, .raw-data-table-body-item {
+        /* Keeps the content on a single line */
+        white-space: nowrap; 
+    }
+
+    .raw-data-table-head-item{
+        padding: 1rem;
+    }
+
+    .raw-data-table-body-item{
+        padding: 1rem;
+    }
+    
+    .form-mbti{
+        font-family: "source-sans-pro", sans-serif;
+        
+    }
+    
+
+    .information-MBTI-container{
+        width: 100%;
+        grid-column: 1 / 13;
+        grid-row: 3 / 20;   
+        display: grid;
+        grid-template-columns: repeat(12, 4.875rem);
+        grid-template-rows: repeat(13, 4.875rem);
+    }
+    .information-MBTI-container > div{
+        cursor: pointer;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .information-MBTI-description{
+        display: none;
+    }
+    .information-MBTI-container > div:hover{
+        background-color: darkblue;
+    }
+
+    .active-information-MBTI-container{
+        transform: scale(1.5);
+        z-index: 10;
+        grid-row-end: span 13;
+    }
+
+    .inactive-information-MBTI-container{
+        transform: scale(0.8);
+        opacity: 0.6;
+
+    }
+
+
+
+
+    .information-MBTI-container-INTJ{
+        grid-column: 1 / 4;
+        grid-row: 1 / 4;
+    }
+
+    .information-MBTI-container-INTP{
+        grid-column: 4 / 7;
+        grid-row: 1 / 4;
+    }
+    .information-MBTI-container-ENTJ{
+        grid-column: 7 / 10;
+        grid-row: 1 / 4;
+    }
+    .information-MBTI-container-ENTP{
+        grid-column: 10 / 13;
+        grid-row: 1 / 4;
+
+    }
+    
+    .information-MBTI-container-INFJ{
+        grid-column: 1 / 4;
+        grid-row: 4 / 7;
+
+    }
+    .information-MBTI-container-INFP{
+        grid-column: 4 / 7;
+        grid-row: 4 / 7;
+ 
+    }
+    .information-MBTI-container-ENFJ{
+        grid-column: 7 / 10;
+        grid-row: 4 / 7;
+
+    }
+    .information-MBTI-container-ENFP{
+        grid-column: 10 / 13;
+        grid-row: 4 / 7;
+
+    }
+    .information-MBTI-container-ISTJ{
+        grid-column: 1 / 4;
+        grid-row: 7 / 10;
+
+    }
+    .information-MBTI-container-ISFJ{
+        grid-column: 4 / 7;
+        grid-row: 7 / 10;
+
+    }
+    .information-MBTI-container-ESTJ{
+        grid-column: 7 / 10;
+        grid-row: 7 / 10;
+  
+    }
+    .information-MBTI-container-ESFJ{
+        grid-column: 10 / 13;
+        grid-row: 7 / 10;
+ 
+    }
+    .information-MBTI-container-ISTP{
+        grid-column: 1 / 4;
+        grid-row: 10 / 13;
+  
+    }
+    .information-MBTI-container-ISFP{
+        grid-column: 4 / 7;
+        grid-row: 10 / 13;
+
+    }
+    .information-MBTI-container-ESTP{
+        grid-column: 7 / 10;
+        grid-row: 10 / 13;
+   
+    }
+    .information-MBTI-container-ESFP{
+        grid-column: 10 / 14;
+        grid-row: 10 / 13;
+
+    }
+
+
+
+
+
+}
+
+
+
+
+
+
+
+/*
+ 
+(First condition max-width up to 400, the rest can be min-width
+
+400 older devices
+600 newer phone phone
+768 older/ tablets 
+1000 older laptops
+1440 newer laptops
+1800 projectors
+
+*/

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCAD MBTI</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/vix6bqc.css">
+</head>
+<body>
+    
+    <nav class="navigation">
+        <div class="nav-content">
+            <div id="gim-logo" class="gim-logo">
+                <h1 class="logo-text">Gian-I<br>Media</h1>
+            </div>
+            <div id="nav-overlay" class="nav-overlay">
+                <div class="menu-item-container">
+                    <a href="index.html" class="menu-item">About The Project</a>
+                </div>
+                <div class="menu-item-container">
+                    <a href="dataVisualizations.html" class="menu-item">Data Visualizations</a>
+                </div>
+                <div class="menu-item-container">
+                    <a href="informationMBTI.html" class="menu-item">Information On MBTIs</a>
+                </div>
+                <div class="menu-item-container">
+                    <a href="rawData.html" class="menu-item">Raw Data</a>
+                </div>
+            </div>
+            <div id="menu-icon" class="menu-icon">
+                <div class="menu-line"></div>
+            </div>
+        </div>
+                
+    </nav>
+    
+        
+
+    </div>
+    <div class="background-container">
+
+        <div class="content-container">
+            <div class="main-text-stream">
+                <h1>Submit Your MBTI</h1>
+            </div>
+            <form action="" method="post" class="form-MBTI">
+                <div class="form-MBTI-container-name">
+                    <label for="name" class="form-MBTI-label-name">Name</label>
+                    <input id="name" class="form-MBTI-textarea-name" type="text" placeholder="Your Name" required/>
+                </div>
+
+                <div class="form-MBTI-container-mbti">
+                    <label for="mbti" class="form-MBTI-label-MBTI">MBTI</label>
+                    <select id="mbti" name="mbti" class="form-MBTI-select-mbti">
+                        <option value="INTJ">INTJ - Architect</option>
+                        <option value="INTP">INTP - Logician</option>
+                        <option value="ENTJ">ENTJ - Commander</option>
+                        <option value="ENTP">ENTP - Debater</option>
+                        <option value="INFJ">INFJ - Advocate</option>
+                        <option value="INFP">INFP - Mediator</option>
+                        <option value="ENFJ">ENFJ - Protagonist</option>
+                        <option value="ENFP">ENFP - Campaigner</option>
+                        <option value="ISTJ">ISTJ - Logistician</option>
+                        <option value="ISFJ">ISFJ - Defender</option>
+                        <option value="ESTJ">ESTJ - Executive</option>
+                        <option value="ESFJ">ESFJ - Consul</option>
+                        <option value="ISTP">ISTP - Virtuoso</option>
+                        <option value="ISFP">ISFP - Adventurer</option>
+                        <option value="ESTP">ESTP - Entrepreneur</option>
+                        <option value="ESFP">ESFP - Entertainer</option>
+                    </select>
+                </div>
+
+                <div class="form-MBTI-container-assertiveTurbulent">
+                    <label>A\T</label>
+                    <select id="assertiveTurbulent" name="assertiveTurbulent" class="form-MBTI-select-assertiveTurbulent">
+                        <option value="Assertive">Assertive</option>
+                        <option value="Turbulent">Turbulent</option>
+                        <option value="N/A">Don't Know</option>
+                    </select>
+                </div>
+
+                <div class="form-MBTI-container-program">
+                    <label for="program" class="form-MBTI-label-program">Program</label>
+                    <select id="program" name="program" class="form-MBTI-select-program">
+                        <option value="Graphic Design">Graphic Design</option>
+                        <option value="Illustration">Illustration</option>
+                        <option value="Photography">Photography</option>
+                        <option value="Environmental Design">Environmental Design</option>
+                        <option value="Industrial Design">Industrial Design</option>
+                        <option value="Material Art & Design">Material Art & Design</option>
+                        <option value="Visual & Critical Studies">Visual & Critical Studies</option>
+                        <option value="Integrated Media">Integrated Media</option>
+                        <option value="Digital Futures">Digital Futures</option>
+                        <option value="Advertising">Advertising</option>
+                        <option value="Creative Writing">Creative Writing</option>
+                        <option value="Animation">Animation</option>
+                        <option value="Experimental Animation">Experimental Animation</option>
+                        <option value="Digital Futures">Digital Futures</option>
+                        <option value="Printmaking & Publications">Printmaking & Publications</option>
+                        <option value="Criticism & Curatorial Practice">Criticism and Curatorial Practice</option>
+                        <option value="Drawing & Painting">Drawing & Painting</option>
+                        <option value="Indigenous Visual Culture"> Indigenous Visual Culture</option>
+                        <option value="Sculpture/Installation">Sculpture/Installation</option>
+                    </select>
+                </div>
+
+                <div class="form-MBTI-container-submit">
+                    <input type="submit" value="Submit" class="form-MBTI-submit"/>
+                </div>
+
+            </form>
+
+
+    </div>
+    
+    
+    
+
+    <script
+			  src="https://code.jquery.com/jquery-3.7.1.min.js"
+			  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+			  crossorigin="anonymous"></script>
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
