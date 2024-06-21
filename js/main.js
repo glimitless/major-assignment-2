@@ -237,7 +237,7 @@ function addDescriptionFunction() {
         div.addEventListener('click', function() {
             const divID = this.getAttribute('mbti-id');
             const allDescriptionContainers = document.querySelectorAll('.information-MBTI-description-row');
-            const isDivActive = div.classList.contains('active');
+            const isDivActive = div.classList.contains('info-active');
 
             // First, deactivate all containers and remove existing text
             allDescriptionContainers.forEach(otherContainer => {
@@ -262,7 +262,7 @@ function addDescriptionFunction() {
 
 
                     if(!isActive && !isDivActive){
-                        div.classList.add('active')
+                        div.classList.add('info-active')
                         container.classList.add('active-information-MBTI-description-row');
                         const descriptorText = document.createElement('h1');
                         descriptorText.innerHTML = mbtiInformation[divID].descriptor;
@@ -279,7 +279,7 @@ function addDescriptionFunction() {
 
             document.querySelectorAll('.information-MBTI-row > div').forEach(otherDiv =>{
                 if(otherDiv !== div || isDivActive){
-                    otherDiv.classList.remove('active');
+                    otherDiv.classList.remove('info-active');
                 }
             });
 

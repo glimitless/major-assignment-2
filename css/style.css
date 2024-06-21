@@ -358,7 +358,7 @@ p{
         min-height: 14.625rem;
         background-color: #202628;
     }
-    .active{
+    .info-active{
         background-color: #202628;
     }
 
@@ -713,7 +713,7 @@ p{
         height: 14.625rem;
         background-color: #202628;
     }
-    .active{
+    .info-active{
         background-color: #202628;
     }
 
@@ -1031,7 +1031,7 @@ p{
         color:rgba(221, 226, 227, 1);
         background-color: #202628;
     }
-    .active{
+    .info-active{
         background-color: #202628;
     }
 
